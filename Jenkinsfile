@@ -17,9 +17,18 @@ pipeline {
                 sh ' https://github.com/knpatel5900/jenkins-terraform.git'
             }
         }
+        tage('Git-Intigreation') {
+         steps {
+             script {
+                    properties([pipelineTriggers([pollSCM('* * * * *')])])
+                }
+            git 'https://github.com/knpatel5900/Maven-Demo.git'
+            echo 'Compiled Succesfully'
+         }
+      }
         stage('terraform init') {
             steps {
-                sh ' /root/terraform/demo-4~vpc_Creation/terraform init ./jenkins'
+                sh ' /root/terraform/demo-4~vpc_Creation/terraform init'
             }
         }
         stage('terraform plan') {
