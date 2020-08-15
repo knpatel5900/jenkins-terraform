@@ -12,11 +12,7 @@ pipeline {
                 sh 'echo "Started...!" '
             }
         }
-        stage('git clone') {
-            steps {
-                sh ' https://github.com/knpatel5900/jenkins-terraform.git'
-            }
-        }
+        
         stage('Git-Intigreation') {
          steps {
              script {
