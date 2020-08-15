@@ -24,7 +24,7 @@ pipeline {
       }
         stage('terraform init') {
             steps {
-                sh ' sudo /root/terraform/demo-4~vpc_Creation/terraform init ./jenkins'
+                sh ' sudo terraform init ./jenkins'
             }
         }
         stage('terraform plan') {
