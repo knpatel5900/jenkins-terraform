@@ -17,7 +17,7 @@ pipeline {
                 sh ' https://github.com/knpatel5900/jenkins-terraform.git'
             }
         }
-        tage('Git-Intigreation') {
+        stage('Git-Intigreation') {
          steps {
              script {
                     properties([pipelineTriggers([pollSCM('* * * * *')])])
