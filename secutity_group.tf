@@ -1,3 +1,12 @@
+resource "aws_vpc" "Terraform_VPC" {
+ cidr_block = var.vpcCIDRblock
+ instance_tenancy = var.instanceTenancy
+
+  tags = {
+    Name = "Terraform_VPC"
+  }
+}
+
 resource "aws_security_group" "terraform_sg" {
   vpc_id       = aws_vpc.Terraform_VPC.id
   name         = "terrform_sg"
